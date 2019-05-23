@@ -51,7 +51,6 @@ class Game:
                 if self.snake_there(x, y) == True:
                     continue
                 self.apple = (x, y)
-                print(self.apple)
                 break
             self.pomme_is_there = True
             
@@ -70,14 +69,21 @@ class Game:
             w/z => haut   = 3
             s/s => bas    = 4
         """
+        eat = False
+        
         if direction == "a":
-            self.snake.moveLeft(self.apple)
+            eat = self.snake.moveLeft(self.apple)
         elif direction == "d":
-            self.snake.moveRight(self.apple)
+            eat = self.snake.moveRight(self.apple)
         elif direction == "w":
-            self.snake.moveUp(self.apple)
+            eat = self.snake.moveUp(self.apple)
         elif direction == "s":
-            self.snake.moveDown(self.apple)
+            eat = self.snake.moveDown(self.apple)
+
+        if eat:
+            self.pomme_is_there = False
+            self.add_apple()
+
 
 
 
