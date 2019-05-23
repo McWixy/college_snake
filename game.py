@@ -65,10 +65,10 @@ class Game:
         direction = input("Direction")
         print('a')
         """
-        a/q => gauche = 1
-        d/d => droite = 2
-        w/z => haut   = 3
-        s/s => bas    = 4
+            a/q => gauche = 1
+            d/d => droite = 2
+            w/z => haut   = 3
+            s/s => bas    = 4
         """
         if direction == "a":
             self.snake.moveLeft(self.apple)
